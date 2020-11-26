@@ -16,7 +16,7 @@ class BlogController extends AbstractController
 {   public static $ripo;
 
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/", name="blog")
      * @return Response
      */
     public function index(PostRepository $ripo): Response
