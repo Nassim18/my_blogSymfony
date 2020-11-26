@@ -10,5 +10,22 @@
 
 <div class="example-wrapper">
     <h1> {{ message }}! ✅</h1>
+    <div class="container">
+        <div class="row">
+    {%  for post in posts %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.titre}}</h5>
+                    <p class="card-text">{{post.content}}</p>
+                    <p>{{post.publishedAt |date("d/m/Y")}}</p>
+                    <a href="/post/{{post.id}}" class="btn btn-primary">Lire article</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
