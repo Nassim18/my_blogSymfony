@@ -1,1 +1,1 @@
-web: heroku-php-apache2 src/Controller/
+web: heroku-php-apache2 src/Controller/BlogController.php
