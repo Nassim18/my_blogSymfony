@@ -51,6 +51,7 @@
         "symfony/var-dumper": "^5.1",
         "symfony/web-profiler-bundle": "^5.1"
     },
+
     "config": {
         "optimize-autoloader": true,
         "preferred-install": {
@@ -83,7 +84,7 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+
         ],
         "post-update-cmd": [
             "@auto-scripts"
