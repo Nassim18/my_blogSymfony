@@ -18,7 +18,7 @@ class Comment
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="comments")
      */
     private $author;
 
@@ -42,12 +42,12 @@ class Comment
         return $this->id;
     }
 
-    public function getAuthor(): ?string
+    public function getAuthor(): ?User
     {
         return $this->author;
     }
 
-    public function setAuthor(string $author): self
+    public function setAuthor(?User $author): self
     {
         $this->author = $author;
 
@@ -88,5 +88,10 @@ class Comment
         $this->post = $post;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getAuthor();
     }
 }

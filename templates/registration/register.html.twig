@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+{% block stylesheets %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+<form method="post">
+    {% if app.user %}
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                        <a class="text-muted" href="/">Home</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo text-dark" href="#" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="text-muted" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <hr>
+
+
+        </div>
+        <div role="main" class="container">
+            <div class="container">
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if app.user == false %}
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                        <a class="text-muted" href="/">Home</a>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo text-dark" href="#" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="text-muted" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <hr>
+
+
+        </div>
+        <div role="main" class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <div id="first">
+                            <div class="myform form ">
+                                <div class="logo mb-3">
+                                    <div class="col-md-12 text-center">
+                                        <h1 style="font-family: 'Kaushan Script', cursive;">Registration</h1>
+                                    </div>
+                                </div>
+                                <form action="" method="post" name="register">
+                                    {{ form_start(registrationForm) }}
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.username) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.plainPassword, {
+                                            label: 'Password'
+                                        }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.email) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.fullname) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.agreeTerms) }}
+                                        <hr class="hr-or">
+                                    </div>
+
+                                    <div class="row ">
+                                        <div class="col-lg-6 col-sm">
+                                            <button type="reset" name="reset" id="reset" class="btn btn-block mybtn btn-warning tx-tfm">Reset</button>
+                                        </div>
+                                        <div class="col-lg-6 col-sm">
+                                            <button type="submit" name="register" id="register" class="btn btn-block mybtn btn-success tx-tfm">Submit</button>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                    {{ form_end(registrationForm) }}
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</form>
+{% endblock %}

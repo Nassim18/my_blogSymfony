@@ -39,6 +39,14 @@ class Post
      */
     private $publishedAt;
 
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="post")
+     * @ORM\JoinColumn()
+     */
+    private $user;
+
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="post")
      */
@@ -99,6 +107,18 @@ class Post
     {
         $this->publishedAt = $publishedAt;
 
+        return $this;
+    }
+
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser($user) : self
+    {
+        $this->user = $user;
         return $this;
     }
 

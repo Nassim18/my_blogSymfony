@@ -47,4 +47,14 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getLatest()
+    {
+        return $this->createQueryBuilder('p')->select('p')
+            ->setMaxResults(5)
+            ->orderBy('p.publishedAt','DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

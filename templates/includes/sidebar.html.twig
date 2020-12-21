@@ -1,0 +1,16 @@
+<div class="col">
+    <div class="col-12">
+        <div class="card-body">
+            <div class="card-body">
+                <h5 class="card-title">Recent Posts</h5>
+                <hr>
+            </div>
+            <img src="https://ibali.fr/wp-content/uploads/2018/12/Blogs.jpg " class="card-img-top" alt="...">
+        </div>
+        {% for post in latests %}
+            <div class="card-footer">
+                <h6 class="latest"><a href="{{ path('post_show',{'id':post.id}) }}" class="author">{{post.titre}}</a></h6>
+            </div>
+        {% endfor %}
+    </div>
+</div>
