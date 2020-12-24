@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -35,7 +35,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 "attr" => [ "class" => "checkbox col-md-1"]
             ])
-            ->add('plainPassword', PasswordType::class, [
+            ->add('plainPassword', RepeatedType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
@@ -48,10 +48,14 @@ class RegistrationFormType extends AbstractType
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
-                    ]),
+                    ])
                 ],
-                "attr" => [ "class" => "form-control",
-                    'placeholder' => "Please enter a password"]
+
+                'type' => PasswordType::class,
+                'first_options' => ['label' => 'Password',"attr" => [ "class" => "form-control",
+                    'placeholder' => "Please enter a password"],],
+                'second_options' => ['label' => 'Confirmation',"attr" => [ "class" => "form-control",
+                    'placeholder' => "Please confirm your password"],]
             ])
             ->add('email', EmailType::class, [
                 "attr" => [

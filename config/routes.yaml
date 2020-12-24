@@ -1,3 +1,11 @@
 index:
     path: /
     controller: App\Controller\BlogController::index
+
+profile:
+    path: /profile/{username}
+    controller: App\Controller\BlogController::renderProfile
+
+updatePost:
+    path: /posts/update-post/{id}
+    controller: App\Controller\BlogController::renderUpdate

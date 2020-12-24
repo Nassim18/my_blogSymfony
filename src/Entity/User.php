@@ -59,6 +59,8 @@ class User implements UserInterface,JsonSerializable
      */
     private $comments;
 
+    private $plainPassword;
+
 
     public function __construct()
     {
@@ -211,5 +213,20 @@ class User implements UserInterface,JsonSerializable
 
             ]
         ];
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPlainPassword(): string
+    {
+        return (string) $this->plainPassword;
+    }
+
+    public function setPlainPassword(string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
     }
 }

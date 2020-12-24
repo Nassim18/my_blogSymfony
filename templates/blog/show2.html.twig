@@ -91,20 +91,31 @@
 
                 <p>{{post.content}}</p>
                 <div class="blog-pagination">
+                    <hr>
+                    <h4 class="font-italic">Comments section</h4>
                     {{ form_row(form.content) }}
                     <div class="p-3" style="float: right">
+                        {% if app.user %}
                     {{ form_row(form.submit) }}
+                        {% endif %}
+                        {% if app.user == false %}
+                        <p>Want to leave a comment ? Please Sign in</p>
+                            <a class="btn btn-sm btn btn-outline-primary" href="{{ path('app_login') }}" style="float: right">Sign in</a>
+                        {% endif %}
                     </div>
                 </div>
                 <br>
             </div>
-            <div class="col-md-8">
-                <h4 class="font-italic">Comments</h4>
+            <div class="col-md-7">
+                <h5 class="font-italic">Post comments "<small>{{ post.comments.count }} </small><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path fill-rule="evenodd" d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
+                    </svg>"</h5>
                 {% for comment in post.comments %}
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ comment.author|trans }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Published on {{ comment.createdAt | date("d/m/Y") }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Published on {{ comment.createdAt | date("F jS \\a\\t g:ia") }}</h6>
                             <p class="card-text">{{ comment.content }}</p>
                         </div>
                     </div>

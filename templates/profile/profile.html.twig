@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Profile{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block stylesheets %}
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
+        <script src="{{ asset('js/style.js') }}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% endblock %}
+</head>
+<!-- Demo header-->
+<section class="container">
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    {% if app.user == false %}
+                        <a class="text-muted" href="/{{ path('app_register') }}">Register</a>
+                    {% endif %}
+                    {% if app.user  %}
+                        <a class="text-muted" href="/" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
+                    {% endif %}
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="{{ path('index') }}" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="text-muted" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+                    </a>
+                    {% if app.user  %}
+                        <a class="btn btn-sm btn btn-outline-danger" href="{{ path('app_logout') }}">Disconnect</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Tabs nav -->
+                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link mb-3 p-3 shadow active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
+                        <i class="fa fa-tachometer-alt mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Dashboard</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-post-management-tab" data-toggle="pill" href="#v-pills-post-management" role="tab" aria-controls="v-pills-post-management" aria-selected="false">
+                        <i class="fa fa-cog mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Post Management</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                        <i class="fa fa-star mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Reviews</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <i class="fa fa-heart mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Likes</span></a>
+
+                 <!--   <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill" href="{{ path('app_logout') }}" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                        <i class="fa fa-sign-out-alt mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Log out</span></a> -->
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+                        <div class="tab-pane active">
+                            <div class="mb-3 bg-dark">
+                                <div class="row">
+                                    <div class="col-12" style="background-image: url('https://cdn.flipsnack.com/blog/wp-content/uploads/2016/06/17063920/blog-cover.jpg')">
+                                        <a class="position-absolute ml-3 mt-3 text-white" href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images"><i class="fas fa-cog"></i></a>
+                                        <div class="row">
+                                            <div class="col-md-6 ml-auto mr-auto">
+                                                <div class="profiles p-3 my-4 rounded text-center shadow-sm">
+                                                    <div class="avatars">
+                                                        <a href="#">
+                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3wpa98FP44GlPpDnYrpVAPWU9J6Lxa1A2HA&usqp=CAU" style="max-height: 20%;max-width: 20%" alt="Circle Image" class="avatar-lg rounded-circle img-fluid" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit avatar images">
+                                                        </a>
+                                                    </div>
+                                                    <div class="names">
+                                                        <h3 class="title text-light">@{{ app.user }}</h3>
+                                                        <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
+                                                        <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
+                                                        <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
+                                                        <a href="#" class="btn btn-link btn-instagram"><i class="fab fa-instagram"></i></a>
+                                                        <a href="#" class="btn btn-link btn-youtube"><i class="fab fa-youtube"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Statistics</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Personal informations</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Latest posts</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <a class="member-item" id="posts" href="#">
+                                                        <div class="card mb-2 mb-md-5 py-3">
+                                                            <div class="content">
+                                                                <div class="row">
+                                                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                        <div class="icon-big text-warning text-center">
+                                                                            <i class="fas fa-copy"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                        <div class="numbers">
+                                                                            <p>Posts</p>
+                                                                            {{ app.user.posts.count }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <a class="member-item" id="comments" href="#">
+                                                        <div class="card mb-2 mb-md-5 py-3">
+                                                            <div class="content">
+                                                                <div class="row">
+                                                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                        <div class="icon-big text-info text-center" title="1 new comment">
+                                                                            <div class="notif">1</div>
+                                                                            <i class="fas fa-comment"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                        <div class="numbers">
+                                                                            <p>Comments</p>
+                                                                            {{ app.user.comments.count }}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            <div class="p-3 border mb-3">
+                                                <a class="position-absolute" style="right: 25px" href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit profile"><i class="fas fa-cog"></i></a>
+                                                <h3>Profile informations</h3>
+                                                <p><b>Username :</b> {{ app.user.username }}</p>
+                                                <p><b>Fullname :</b> {{ app.user.fullname }}</p>
+                                                <p><b>Email :</b> {{ app.user.email }}</p>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                            <div class="p-3 border mb-3">
+                                                <h5>Recently Published</h5>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <ul class="list-unstyled statistics">
+                                                            {% for post in posts %}
+                                                                <li>
+                                                                    <span class="text-primary">Published on {{post.publishedAt |date("F jS \\a\\t g:ia")}}</span> <a class="h6" href="{{ path('post_show', {'id': post.id }) }}">{{ post.titre }}</a>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-post-management" role="tabpanel" aria-labelledby="v-pills-post-management-tab">
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-8"><h2>Posts <b>Details</b></h2></div>
+                                    <div class="col-sm-4">
+                                        <a class="btn btn btn-info add-new"href="{{ path('add_post') }}"><i class="fa fa-plus"></i> Add New</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr style="background-color: #dddddd">
+                                    <th>Post ID</th>
+                                    <th>Title</th>
+                                    <th>Content</th>
+                                    <th>Last updated</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                {% for post in user.posts %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ post.id }}</td>
+                                    <td>{{ post.titre }}</td>
+                                    <td>{{ post.content|striptags|slice(0, 20) ~ '...' }}</td>
+                                    <td>{{ post.publishedAt |date("d/m/Y") }}</td>
+                                    <td>
+                                         <a class="edit" title="Edit" data-toggle="tooltip" href="{{ path('update_post', {'id':post.id}) }}"><i class="material-icons"></i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip" href="{{ path('delete_post', {'id': post.id}) }}"><i class="material-icons"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+                    </div>
+
+                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block scripts %}
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
+
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Enovbm Blog{% endblock %}</title>
+    <title>{% block title %}Enovbm Posts{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,46 +21,33 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
                 {% if app.user == false %}
-                <a class="text-muted" href="{{ path('app_register') }}">Register</a>
+                    <a class="text-muted" href="/{{ path('app_register') }}">Register</a>
                 {% endif %}
                 {% if app.user  %}
                     <a class="text-muted" href="/" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
                 {% endif %}
             </div>
             <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="#" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
+                <a class="blog-header-logo text-dark" href="{{ path('index') }}" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
                 <a class="text-muted" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
                 </a>
                 {% if app.user == false %}
-                <a class="btn btn-sm btn btn-outline-primary" href="{{ path('app_login') }}">Sign in</a>
+                    <a class="btn btn-sm btn btn-outline-primary" href="{{ path('app_login') }}">Sign in</a>
                 {% endif %}
                 {% if app.user  %}
                     <a class="btn btn-sm btn btn-outline-danger" href="{{ path('app_logout') }}">Disconnect</a>
                 {% endif %}
             </div>
         </div>
+        <hr>
     </header>
-    <hr>
-    <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            {% if app.user  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">Profile</a> {% endif %}
-            <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
-            <a class="p-2 text-muted" href="#">Contact</a>
-        </nav>
-    </div>
 
-    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('https://ksapa.org/fr/wp-content/uploads/sites/1/2019/02/bienvenue-sur-le-blog-de-farid-baddache-resilience-impact-inclusion.jpg');">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-    </div>
-   <!-- This part was used in the first testing -->
-<!--
+
+    <!-- This part was used in the first testing -->
+    <!--
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for post in latests %}
             <div class="col-md-6">
@@ -84,15 +71,16 @@
 -->
 </div>
 <main role="main" class="container">
-    <hr>
+
     <div class="row">
         <div class="col-md-8 blog-main">
             <h3 class="pb-3 mb-4 font-italic border-bottom">
                 From the Firehose
             </h3>
+
             <div class="blog-post">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                    {% for post in posts|slice(0,10) %}
+                    {% for post in posts %}
                         <div class="col-md-6">
                             <div class="card h-100">
                                 <img src="https://placeimg.com/380/230/tech" class="card-img-top" alt="...">
@@ -115,21 +103,8 @@
                 </div>
             </div><!-- /.blog-post -->
 
-            <!--
-            <div class="blog-post">
-                <h2 class="blog-post-title">New feature</h2>
-                <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
 
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <ul>
-                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                    <li>Donec id elit non mi porta gravida at eget metus.</li>
-                    <li>Nulla vitae elit libero, a pharetra augue.</li>
-                </ul>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            </div>
-            -->
+
             <!-- /.blog-post -->
             <!--
             <nav class="blog-pagination">
@@ -139,7 +114,7 @@
             -->
         </div><!-- /.blog-main -->
 
-        <aside class="col-md-4 blog-sidebar">
+        <div class="col-md-4 blog-sidebar">
             <div class="p-3 mb-3 bg-light rounded">
                 <h4 class="font-italic">About</h4>
                 <p class="mb-0">This blog was made by ENOVBM GROUP, as part of a symfony project for the E-Application module [HMIN302].</p>
@@ -148,9 +123,9 @@
             <div class="p-3">
                 <h4 class="font-italic">Latest posts</h4>
                 {% for post in latests %}
-                <ol class="list-unstyled mb-0">
-                    <li><a href="{{ path('post_show',{'id':post.id}) }}" class="author">{{post.titre}}</a></li>
-                </ol>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="{{ path('post_show',{'id':post.id}) }}" class="author">{{post.titre}}</a></li>
+                    </ol>
                 {% endfor %}
             </div>
 
@@ -161,7 +136,7 @@
                 </ol>
             </div>
         </aside><!-- /.blog-sidebar -->
-
+        </div>
     </div><!-- /.row -->
     <hr>
 </main><!-- /.container -->
