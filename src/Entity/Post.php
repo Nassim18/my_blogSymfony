@@ -74,12 +74,12 @@ class Post
         return $this;
     }
 
-    public function getUrlAlias(): ?string
+    public function geturl_alias(): ?string
     {
         return $this->url_alias;
     }
 
-    public function setUrlAlias(string $url_alias): self
+    public function seturl_alias(string $url_alias): self
     {
         $this->url_alias = $url_alias;
 

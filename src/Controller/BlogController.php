@@ -30,12 +30,13 @@ class BlogController extends AbstractController
         BlogController::$ripo=$ripo;
         $posts = $ripo->findAll();
         $post = $this->getDoctrine()->getRepository(Post::class)->findAll();
+
         $latests = $this->getDoctrine()
                        ->getRepository(Post::class)
                        ->getLatest();
         $comments = $this->getDoctrine()->getRepository(Comment::class)->findBy(["post" => $post]);
 
-        return $this->render('blog/index3.html.twig', [
+        return $this->render('blog/index.html.twig', [
 
              'message' => 'Page d\'accueil',
               'posts'   => $posts,
@@ -66,15 +67,15 @@ class BlogController extends AbstractController
 
 
     /**
-     * @Route("/blog/post/{id}", name="post_show")
-     * @param $id
+     * @Route("/blog/post/{url_alias}", name="post_show")
+     * @param $url_alias
      * @return Response
      */
-    public function renderPost($id,Request $request, EntityManagerInterface $em): Response
+    public function renderPost($url_alias, Request $request, EntityManagerInterface $em): Response
     {
         $post = $this->getDoctrine()
-                    ->getRepository(Post::class)
-                    ->findOneBy(['id' => $id]);
+            ->getRepository(Post::class)
+            ->findOneBy(['url_alias' => $url_alias]);
         $latests = $this->getDoctrine()
                         ->getRepository(Post::class)
                         ->getLatest();
@@ -95,7 +96,7 @@ class BlogController extends AbstractController
             $em -> flush();
         }
 
-        return $this->render('blog/show2.html.twig',[
+        return $this->render('post/showPost.html.twig',[
                'post' => $post,
             'latests' => $latests,
             'form' => $form->createView()
@@ -115,7 +116,7 @@ class BlogController extends AbstractController
         $latests = $this->getDoctrine()
             ->getRepository(Post::class)
             ->getLatest();
-        return $this->render('blog/user_posts.html.twig',[
+        return $this->render('post/userPosts.html.twig',[
             'posts' => $posts,
             'latests' => $latests,
             'user' => $user
@@ -225,6 +226,58 @@ class BlogController extends AbstractController
         $em->remove($post);
         $em->flush();
         return $this->redirectToRoute('profile',['username'=>$user->getUsername()]);
+    }
+
+    /**
+     * @Route("/posts/delete-comment/{id}", name="delete_comment")
+     * @param $id
+     * @return Response
+     */
+    public function deleteComment($id): Response
+    {
+        $post = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($post);
+        $em->flush();
+        return $this->redirectToRoute('posts_show');
+    }
+
+    /**
+     * @Route("/blog/post/{id}", name="showsPost")
+     * @param $id
+     * @return Response
+     */
+    public function showsPost($id, Request $request, EntityManagerInterface $em): Response
+    {
+        $post = $this->getDoctrine()
+            ->getRepository(Post::class)
+            ->findOneBy(['id' => $id]);
+        $latests = $this->getDoctrine()
+            ->getRepository(Post::class)
+            ->getLatest();
+
+        $comment = new Comment();
+        //$form = $this->createForm(CommentType::class,$comment);
+        $form = $this->createForm(CommentType::class,$comment);
+
+        $comment -> setCreatedAt(new \DateTime());
+        $comment -> setPost($post);
+        $user = $this->getUser();
+        $comment -> setAuthor($user);
+
+        $form -> handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em -> persist($comment);
+            $em -> flush();
+        }
+
+        return $this->render('blog/showPost.html.twig',[
+            'post' => $post,
+            'latests' => $latests,
+            'form' => $form->createView()
+        ]);
+
     }
 
 

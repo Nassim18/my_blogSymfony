@@ -4,16 +4,8 @@
     <title>{% block title %}{{ user.fullname }} posts{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href="/templates/includes/style.css" rel="stylesheet">
-        <link href="/templates/includes/style2.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     {% endblock %}
 </head>
 <body>
@@ -23,14 +15,14 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
                 {% if app.user == false %}
-                    <a class="text-muted" href="/{{ path('app_register') }}">Register</a>
+                    <a class="text-muted" href="{{ path('app_register') }}">Register</a>
                 {% endif %}
                 {% if app.user  %}
-                    <a class="text-muted" href="/" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
+                    <a class="text-muted" href="#" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
                 {% endif %}
             </div>
             <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="#" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
+                <a class="blog-header-logo text-dark" href="{{ path('blog') }}" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
                 <a class="text-muted" href="#">
@@ -48,8 +40,8 @@
     <hr>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#">All Posts</a>
-            <a class="p-2 text-muted" href="/">Home</a>
+            <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
+            <a class="p-2 text-muted" href="{{ path('blog') }}">Home</a>
             <a class="p-2 text-muted" href="#">Contact</a>
         </nav>
     </div>
@@ -70,12 +62,15 @@
                             <div class="card h-100">
                                 <img src="https://placeimg.com/380/230/tech" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{post.titre}}</h5>
+                                    <h5 class="card-title">{{post.titre}}<small>({{ post.comments|length }})  </small><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                            <path fill-rule="evenodd" d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
+                                        </svg></h5>
                                     <p class="card-text">{{post.content}}</p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Last updated {{post.publishedAt |date("d/m/Y")}}</small>
-                                    <a style="font-weight:inherit; text-align:right;position: absolute;bottom: 5px; right: 5px; " href="{{ path('post_show',{'id':post.id}) }}" class="btn btn-primary">Read the post</a>
+                                    <a style="font-weight:inherit; text-align:right;position: absolute;bottom: 5px; right: 5px; " href="{{ path('post_show',{'url_alias':post.url_alias}) }}" class="btn btn-primary">Read the post</a>
                                 </div>
                             </div>
                         </div>

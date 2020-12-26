@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     var actions = $("table td:last-child").html();
@@ -50,3 +52,5 @@ $(document).ready(function(){
         $(".add-new").removeAttr("disabled");
     });
 });
+
+

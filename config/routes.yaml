@@ -1,3 +1,5 @@
+# we used the annotation method to get to our routes !
+
 index:
     path: /
     controller: App\Controller\BlogController::index
