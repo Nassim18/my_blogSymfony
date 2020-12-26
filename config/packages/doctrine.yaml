@@ -1,12 +1,14 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-            driver: 'pdo_mysql'
-            server_version: '5.7'
-            charset: utf8mb4
-            default_table_options:
-                charset: utf8mb4
-                collate: utf8mb4_unicode_ci
+            #driver: 'pdo_mysql'
+            #host: '127.0.0.1'
+            #port: '3306'
+            #server_version: '5.7'
+            #charset: utf8mb4
+            #default_table_options:
+                #charset: utf8mb4
+                #collate: utf8mb4_unicode_ci
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '5.7'
