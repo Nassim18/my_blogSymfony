@@ -10,7 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku Procfile" />
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku Procfile">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +200,7 @@
       <workItem from="1606390588011" duration="145000" />
       <workItem from="1606390821081" duration="25183000" />
       <workItem from="1608058983856" duration="352000" />
-      <workItem from="1608059510997" duration="227064000" />
+      <workItem from="1608059510997" duration="230966000" />
     </task>
     <task id="LOCAL-00001" summary="Adding of new Symfony Project">
       <created>1604585221561</created>
