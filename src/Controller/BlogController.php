@@ -229,7 +229,7 @@ class BlogController extends AbstractController
         $user = $this->getUser();
         $em->remove($post);
         $em->flush();
-        return $this->redirectToRoute('profile',['username'=>$user->getUsername()+'#v-pills-post-management']);
+        return $this->redirectToRoute('profile',['username'=> $user->getUsername() . '#v-pills-post-management']);
     }
 
     /**
