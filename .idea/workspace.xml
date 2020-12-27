@@ -398,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609078486669</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Heroku delete post redirection">
+      <created>1609078602633</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609078602633</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,10 +447,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="414" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1609073153267" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609078488635">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609078604498">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609078488635" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609078604498" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609076074662">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
