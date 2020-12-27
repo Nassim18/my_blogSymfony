@@ -35,3 +35,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        # require ROLE_ADMIN for /profile*
+        - { path: ^/profile, roles: ROLE_USER }
+    role_hierarchy:
+        ROLE_EDITOR: ROLE_USER
+        ROLE_ADMIN: ROLE_EDITION

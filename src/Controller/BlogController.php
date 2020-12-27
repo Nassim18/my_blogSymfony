@@ -11,6 +11,7 @@ use App\Form\UpdateType;
 use App\Repository\PostRepository;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -132,15 +133,14 @@ class BlogController extends AbstractController
      * @Route("/profile/{username}", name="user_profile")
      * @param $user
      * @return Response
+     * @IsGranted("ROLE_USER")
      */
     public function renderProfile(User $user): Response
-    {   if($this->getUser()!==null){
-        $connecteduser=$this->getUser();
-        if($connecteduser->getUsername()!=$user->getUsername()){
+    {
+        $connecteduser = $this->getUser();
+        if($connecteduser->getUsername() != $user->getUsername() || $connecteduser == null){
             throw $this->createAccessDeniedException();
         }
-        }else throw  $this->createAccessDeniedException();
-
         $posts = $this->getDoctrine()
             ->getRepository(Post::class)
             ->findBy(['user' => $user],['publishedAt' => 'DESC']);
