@@ -239,7 +239,8 @@ class BlogController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($post);
         $em->flush();
-        return $this->redirectToRoute('posts_show');
+
+        return $this->redirectToRoute('showsPost',['id' => $post->getId()]);
     }
 
     /**

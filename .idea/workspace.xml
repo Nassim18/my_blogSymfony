@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku Procfile">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku db">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606418544022</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Heroku db">
+      <created>1609073328622</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609073328622</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,17 +385,18 @@
     <MESSAGE value="comments form errors fixed" />
     <MESSAGE value="Adding of permission in composer.json" />
     <MESSAGE value="Heroku Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroku Procfile" />
+    <MESSAGE value="Heroku db" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heroku db" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="44" key="RollbackChangesDialog" timestamp="1609073153267">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="414" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1609073153267" />
-    <state x="-27" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609073272141">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609073341139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="-27" y="145" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609073272141" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609073341139" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
