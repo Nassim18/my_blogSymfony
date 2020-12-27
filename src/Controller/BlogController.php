@@ -94,6 +94,10 @@ class BlogController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $em -> persist($comment);
             $em -> flush();
+            unset($form);
+            unset($comment);
+            $comment= new Comment();
+            $form = $this->createForm(CommentType::class,$comment);
         }
 
         return $this->render('post/showPost.html.twig',[
@@ -225,7 +229,7 @@ class BlogController extends AbstractController
         $user = $this->getUser();
         $em->remove($post);
         $em->flush();
-        return $this->redirectToRoute('profile',['username'=>$user->getUsername()]);
+        return $this->redirectToRoute('profile',['username'=> $user->getUsername(),'_fragment'=> 'v-pills-post-management']);
     }
 
     /**
@@ -235,11 +239,12 @@ class BlogController extends AbstractController
      */
     public function deleteComment($id): Response
     {
-        $post = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
+        $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
         $em = $this->getDoctrine()->getManager();
-        $em->remove($post);
+        $em->remove($comment);
+        $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>$comment->getPost()]);
         $em->flush();
-        return $this->redirectToRoute('posts_show');
+        return $this->redirectToRoute('post_show',['url_alias' => $post->geturl_alias()]);
     }
 
     /**
