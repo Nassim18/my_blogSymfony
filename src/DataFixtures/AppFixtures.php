@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $this->loadUsers($manager);
+        //$this->loadUsers($manager);
         $this->loadPosts($manager);
 
     }
@@ -46,7 +46,7 @@ class AppFixtures extends Fixture
 
         $manager->flush();
     }
-
+/*
     public function loadUsers(ObjectManager $manager)
     {
             $user = new User();
@@ -62,4 +62,6 @@ class AppFixtures extends Fixture
                 $manager->persist($user);
                 $manager->flush();
     }
+*/
+
 }

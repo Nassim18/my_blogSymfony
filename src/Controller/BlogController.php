@@ -133,6 +133,7 @@ class BlogController extends AbstractController
     /**
      * @Route("/profile/{username}", name="user_profile")
      * @param $user
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function renderProfile(User $user): Response
@@ -226,6 +227,7 @@ class BlogController extends AbstractController
     /**
      * @Route("/posts/delete-post/{id}", name="delete_post")
      * @param $id
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function renderDelete($id): Response
@@ -241,6 +243,7 @@ class BlogController extends AbstractController
     /**
      * @Route("/posts/delete-comment/{id}", name="delete_comment")
      * @param $id
+     * @IsGranted("ROLE_USER")
      * @return Response
      */
     public function deleteComment($id): Response
@@ -248,9 +251,9 @@ class BlogController extends AbstractController
         $connectedUser = $this->getUser();
 
         $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
-        if($this->getUser()!==null){
+        if($this->getUser()!= null){
 
-            if($this->getUser()->getUsername()!=$comment->getAuthor()->getUsername()){
+            if($this->getUser()->getUsername() !== $comment->getAuthor()->getUsername()){
                 $this->createAccessDeniedException();
             }
     }
@@ -262,7 +265,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/post/{id}", name="showsPost")
+     * @Route("/post/{id}", name="showsPost")
      * @param $id
      * @return Response
      */
