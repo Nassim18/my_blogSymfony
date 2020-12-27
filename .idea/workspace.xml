@@ -482,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609093876402</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Heroku access denied comment deletion">
+      <created>1609094245931</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1609094245931</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,10 +533,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="414" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1609073153267" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609093878796">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609094250117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609093878796" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609094250117" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609076074662">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
