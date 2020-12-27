@@ -248,7 +248,7 @@ class BlogController extends AbstractController
         $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
         if($this->getUser()!==null){
 
-            if($this->getUser()->getUsername()!==$comment->getAuthor()->getUsername()){
+            if($this->getUser()->getUsername()!=$comment->getAuthor()->getUsername()){
                 $this->createAccessDeniedException();
             }
     }

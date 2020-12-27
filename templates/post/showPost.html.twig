@@ -70,7 +70,7 @@
                     {{ form_row(form.content) }}
                     <div class="p-3" style="float: right">
                         {% if app.user == true %}
-                            {{ form_row(form.submit) }}
+                            {{ form_row(app.user) }}
                         {% endif %}
                         {% if app.user == false %}
                         <p>Want to leave a comment ? Please Sign in</p>
