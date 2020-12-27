@@ -94,6 +94,10 @@ class BlogController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $em -> persist($comment);
             $em -> flush();
+            unset($form);
+            unset($comment);
+            $comment= new Comment();
+            $form = $this->createForm(CommentType::class,$comment);
         }
 
         return $this->render('post/showPost.html.twig',[
