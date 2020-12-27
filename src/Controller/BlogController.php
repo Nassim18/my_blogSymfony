@@ -227,8 +227,6 @@ class BlogController extends AbstractController
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id' => $id]);
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();
-        $comments= $this->getDoctrine()->getRepository(Comment::class)->find(['post_id'=>$id]);
-        $em->remove($comments);
         $em->remove($post);
         $em->flush();
         return $this->redirectToRoute('profile',['username'=> $user->getUsername(),'_fragment'=> 'v-pills-post-management']);
