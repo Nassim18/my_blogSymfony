@@ -241,7 +241,7 @@ class BlogController extends AbstractController
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>$comment->getPost()]);
         $em->flush();
         echo("haw zbi : "+$post->getId());
-        return $this->redirectToRoute('post_show',['url_alias' => $post->getId()]);
+        return $this->redirectToRoute('post_show',['url_alias' => $post->geturl_alias()]);
     }
 
     /**
