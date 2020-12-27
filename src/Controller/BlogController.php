@@ -206,7 +206,7 @@ class BlogController extends AbstractController
         if($form->isSubmitted())
         {
             $em = $this->getDoctrine()->getManager();
-            $post->setUrlAlias($slugify->slugify($post->getTitre()));
+            $post->seturl_alias($slugify->slugify($post->getTitre()));
             $post->setPublishedAt(new \DateTime('now'));
             $post->setUser($user);
             $em->persist($post);
