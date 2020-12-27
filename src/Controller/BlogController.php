@@ -104,6 +104,7 @@ class BlogController extends AbstractController
         return $this->render('post/showPost.html.twig',[
                'post' => $post,
             'latests' => $latests,
+            'user' => $user,
             'form' => $form->createView()
         ]);
 
@@ -133,7 +134,6 @@ class BlogController extends AbstractController
      * @Route("/profile/{username}", name="user_profile")
      * @param $user
      * @return Response
-     * @IsGranted("ROLE_USER")
      */
     public function renderProfile(User $user): Response
     {
@@ -245,6 +245,8 @@ class BlogController extends AbstractController
      */
     public function deleteComment($id): Response
     {
+        $connectedUser = $this->getUser();
+
         $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
         if($this->getUser()!==null){
 
