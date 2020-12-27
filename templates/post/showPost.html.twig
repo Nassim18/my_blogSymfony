@@ -68,6 +68,10 @@
                     {{ form_start(form) }}
                     <h4 class="font-italic">Comments section</h4>
                     {{ form_row(form.content) }}
+                    {% if app.user %}
+                    {{ form_row(form.submit) }}
+                    {% endif %}
+                    {{ form_end(form) }}
                     <div class="p-3" style="float: right">
 
                         {% if app.user == false %}
@@ -75,7 +79,6 @@
                             <a class="btn btn-sm btn btn-outline-primary" href="{{ path('app_login') }}" style="float: right">Sign in</a>
                         {% endif %}
                     </div>
-                    {{ form_end(form) }}
                 </div>
                 <br>
             </div>
