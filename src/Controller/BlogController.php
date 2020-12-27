@@ -246,6 +246,12 @@ class BlogController extends AbstractController
     public function deleteComment($id): Response
     {
         $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
+        if($this->getUser()!==null){
+
+            if($this->getUser()->getUsername()!==$comment->getAuthor()->getUsername()){
+                $this->createAccessDeniedException();
+            }
+    }
         $em = $this->getDoctrine()->getManager();
         $em->remove($comment);
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>$comment->getPost()]);
