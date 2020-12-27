@@ -136,7 +136,7 @@ class BlogController extends AbstractController
     public function renderProfile(User $user): Response
     {
         $connecteduser=$this->getUser();
-        if($connecteduser->getUsername()!=$user->getUsername()){
+        if($connecteduser->getUsername()!=$user->getUsername() || $connecteduser==null){
             throw $this->createAccessDeniedException();
         }
         $posts = $this->getDoctrine()
