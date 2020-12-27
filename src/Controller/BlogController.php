@@ -135,6 +135,10 @@ class BlogController extends AbstractController
      */
     public function renderProfile(User $user): Response
     {
+        $connecteduser=$this->getUser();
+        if($connecteduser->getUsername()!=$user->getUsername()){
+            throw $this->createAccessDeniedException();
+        }
         $posts = $this->getDoctrine()
             ->getRepository(Post::class)
             ->findBy(['user' => $user],['publishedAt' => 'DESC']);
