@@ -69,8 +69,9 @@
                     <h4 class="font-italic">Comments section</h4>
                     {{ form_row(form.content) }}
                     <div class="p-3" style="float: right">
-                        {% if app.user == true %}
-                            {{ form_row(app.user) }}
+                        {% if app.user.username%}
+
+                            {{ form_row(form.submit) }}
                         {% endif %}
                         {% if app.user == false %}
                         <p>Want to leave a comment ? Please Sign in</p>
