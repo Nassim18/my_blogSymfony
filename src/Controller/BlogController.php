@@ -171,7 +171,7 @@ class BlogController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
-            $post->setUrlAlias($slugify->slugify($post->getTitre()));
+            $post->seturl_alias($slugify->slugify($post->getTitre()));
             $em->persist($post);
             $em->flush();
             return $this->redirectToRoute('profile',['username'=>$user->getUsername()]);
