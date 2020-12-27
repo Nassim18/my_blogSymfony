@@ -235,12 +235,13 @@ class BlogController extends AbstractController
      */
     public function deleteComment($id): Response
     {
-        $post = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
+        $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
         $em = $this->getDoctrine()->getManager();
-        $em->remove($post);
+        $em->remove($comment);
+        $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>$comment->getPost()]);
         $em->flush();
-
-        return $this->redirectToRoute('showsPost',['id' => $post->getId()]);
+        echo("haw zbi : "+$post->getId());
+        return $this->redirectToRoute('post_show',['url_alias' => $post->getId()]);
     }
 
     /**
