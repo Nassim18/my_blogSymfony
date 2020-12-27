@@ -22,12 +22,13 @@ class RegistrationController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+        $mdp =$form['plainPassword']->getData();
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $password = $passwordEncoder->encodePassword(
                     $user,
                     //$form->get('plainPassword')->getData()
-                    'nasrou');
+                    $mdp);
             $user->setPassword($password);
             $user->setRoles(['ROLE_USER']);
 
