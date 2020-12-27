@@ -6,12 +6,23 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku Procfile">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +39,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,6 +155,10 @@
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jsFD2T8CWBtyqQ4wZG7vTscfRT" />
@@ -361,6 +379,16 @@
     <MESSAGE value="Adding of permission in composer.json" />
     <MESSAGE value="Heroku Procfile" />
     <option name="LAST_COMMIT_MESSAGE" value="Heroku Procfile" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="44" key="RollbackChangesDialog" timestamp="1609073153267">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="414" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1609073153267" />
+    <state x="-27" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609073272141">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-27" y="145" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609073272141" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
