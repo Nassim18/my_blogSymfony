@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title style="margin-left: 50%;margin-right: 50%">{% block title %}Enovbm Blog{% endblock %}</title>
+    <title style="margin-left: 20%;margin-right: 20%">{% block title %}Enovbm Blog{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ encore_entry_link_tags('app') }}
@@ -78,7 +78,9 @@
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Last updated {{post.publishedAt |date("d/m/Y")}}</small>
-                                    <a style="font-weight:inherit; text-align:right;position: absolute;bottom: 5px; right: 5px; " href="{{ path('post_show', {'url_alias': post.url_alias}) }}" class="btn btn-primary">Read the post</a>
+                                    <div class="col-md-13">
+                                    <a style="font-weight:inherit;position: absolute; right: 2%;top: unset; bottom: 1%;left: unset;right: 2%; " href="{{ path('post_show', {'url_alias': post.url_alias}) }}" class="btn btn-primary">Read the post</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-<title>{% block title %}Registration{% endblock %}</title>
-{% block head %}
-{{ encore_entry_link_tags('app') }}
+<head>
+    <title style="margin-left: 20%;margin-right: 20%">{% block title %}Enovbm Blog{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}
     {% endblock %}
-{% endblock %}
+</head>
+<body>
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -117,4 +120,5 @@
     {% endif %}
 </form>
 {% endblock %}
+</body>
 </html>
