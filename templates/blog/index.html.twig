@@ -58,11 +58,11 @@
 <main role="main" class="container">
     <hr>
     <div class="row">
-        <div class="col-md-8 blog-main">
+        <div id="blog-post" class="col-md-8 blog-main">
             <h3 class="pb-3 mb-4 font-italic border-bottom">
                 Newest Articles
             </h3>
-            <div id="blog-post" class="blog-post">
+            <div  class="blog-post">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     {% for post in posts|slice(0,10) %}
                         <div class="col-md-6">
