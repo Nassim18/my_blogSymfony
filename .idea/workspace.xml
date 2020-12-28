@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="latest articles on home page">
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="home page design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html.twig" afterDir="false" />
     </list>
@@ -476,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609194174401</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="home page design">
+      <created>1609196301566</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1609196301566</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,17 +517,18 @@
     <MESSAGE value="Heroku access denied route" />
     <MESSAGE value="Heroku delete comment access" />
     <MESSAGE value="latest articles on home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="latest articles on home page" />
+    <MESSAGE value="home page design" />
+    <option name="LAST_COMMIT_MESSAGE" value="home page design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="51" key="MergeDialog" timestamp="1609196208572">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1609196208572" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609194176017">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609196303081">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609194176017" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609196303081" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609196229067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
