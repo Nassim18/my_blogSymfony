@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku delete comment access">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/showAllPosts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/showAllPosts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/showPost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/showPost.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="latest articles on home page">
+      <change beforePath="$PROJECT_DIR$/src/Repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PostRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -465,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609106316390</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="latest articles on home page">
+      <created>1609193949661</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1609193949661</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +501,14 @@
     <MESSAGE value="Heroku delete post redirection" />
     <MESSAGE value="Heroku access denied route" />
     <MESSAGE value="Heroku delete comment access" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroku delete comment access" />
+    <MESSAGE value="latest articles on home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest articles on home page" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609193994566">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609193994566" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
