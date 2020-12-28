@@ -56,7 +56,7 @@ class PostRepository extends ServiceEntityRepository
             ->getResult();
     }
     public function findAll(){
-        return $this->findBy(array(),array('published_at','DES'));
+        return $this->findBy(array(),array('published_at' => 'DESC'));
     }
 
 }
