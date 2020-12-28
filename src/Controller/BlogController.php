@@ -47,7 +47,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/posts", name="posts_show")
+     * @Route("/posts", name="posts_show")
      * @return Response
      */
     public function blogPosts(): Response
@@ -68,7 +68,7 @@ class BlogController extends AbstractController
 
 
     /**
-     * @Route("/blog/post/{url_alias}", name="post_show")
+     * @Route("/post/{url_alias}", name="post_show")
      * @param $url_alias
      * @return Response
      */
@@ -110,7 +110,7 @@ class BlogController extends AbstractController
 
         }
     /**
-     * @Route("/blog/{username}/posts", name="user_posts")
+     * @Route("/{username}/posts", name="user_posts")
      * @param $user
      * @return Response
      */
@@ -140,7 +140,7 @@ class BlogController extends AbstractController
     {
         $connecteduser = $this->getUser();
         if($connecteduser->getUsername() != $user->getUsername() || $connecteduser == null){
-            throw $this->createAccessDeniedException();
+            return $this->render('security/error.html.twig');
         }
         $posts = $this->getDoctrine()
             ->getRepository(Post::class)
@@ -201,6 +201,12 @@ class BlogController extends AbstractController
     {
         $slugify = new Slugify();
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id' => $id]);
+        $userConnected = $this->getUser()->getUsername();
+        $userr = $this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=> $post->getUser()->getId()]);
+        if(strcmp($userConnected , $userr) !== 0){
+            return $this->render('security/error.html.twig');
+        }
+
         $form = $this->createForm(UpdateType::class,$post);
         $user = $this->getUser();
 
@@ -233,11 +239,15 @@ class BlogController extends AbstractController
     public function renderDelete($id): Response
     {
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id' => $id]);
+        $userConnected = $this->getUser()->getUsername();
+        $userr = $this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=> $post->getUser()->getId()]);
+        if(strcmp($userConnected , $userr) !== 0){
+            return $this->render('security/error.html.twig');
+        }
         $em = $this->getDoctrine()->getManager();
-        $user = $this->getUser();
         $em->remove($post);
         $em->flush();
-        return $this->redirectToRoute('profile',['username'=> $user->getUsername(),'_fragment'=> 'v-pills-post-management']);
+        return $this->redirectToRoute('profile',['username'=> $userConnected,'_fragment'=> 'v-pills-post-management']);
     }
 
     /**
@@ -248,20 +258,16 @@ class BlogController extends AbstractController
      */
     public function deleteComment($id): Response
     {
-        $connectedUser = $this->getUser();
-
         $comment = $this->getDoctrine()->getRepository(Comment::class)->findOneBy(['id' => $id]);
-        if($this->getUser() !== null)
-        {
-            if($this->getUser()->getUsername() !== $comment->getAuthor()->getUsername()){
-                $this->createAccessDeniedException();
-            }
+        if(strcmp($this->getUser()->getUsername() , $comment->getAuthor()->getUsername()) !== 0){
+                return $this->render('security/error.html.twig');
         }
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($comment);
-        $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>$comment->getPost()]);
-        $em->flush();
-        return $this->redirectToRoute('post_show',['url_alias' => $post->geturl_alias()]);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($comment);
+            $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id' => $comment->getPost()]);
+            $em->flush();
+            return $this->redirectToRoute('post_show', ['url_alias' => $post->geturl_alias()]);
+
     }
 
     /**
