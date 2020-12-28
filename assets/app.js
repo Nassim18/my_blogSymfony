@@ -16,7 +16,15 @@ import 'jquery/dist/jquery.min';
 import 'jquery/dist/jquery.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './bootstrap.js'
+const toTop = document.querySelector(".to-top");
 
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 100) {
+        toTop.classList.add("active");
+    } else {
+        toTop.classList.remove("active");
+    }
+})
 //import $ from 'jquery';
 
 

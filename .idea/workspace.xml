@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="back to top">
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="back to top (doesn't work)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html.twig" afterDir="false" />
     </list>
@@ -511,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609197501113</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="back to top (doesn't work)">
+      <created>1609197647740</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1609197647740</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,17 +556,18 @@
     <MESSAGE value="latest articles on home page" />
     <MESSAGE value="home page design" />
     <MESSAGE value="back to top" />
-    <option name="LAST_COMMIT_MESSAGE" value="back to top" />
+    <MESSAGE value="back to top (doesn't work)" />
+    <option name="LAST_COMMIT_MESSAGE" value="back to top (doesn't work)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="51" key="MergeDialog" timestamp="1609196208572">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1609196208572" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609197502734">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609197806688">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609197502734" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609197806688" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609196887170">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
