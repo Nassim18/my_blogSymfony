@@ -18,7 +18,7 @@
                 <a class="text-muted" href="{{ path('app_register') }}">Register</a>
                 {% endif %}
                 {% if app.user  %}
-                    <a class="text-muted" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
+                    <a class="text-muted" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back {{ app.user.fullname }}</a>
                 {% endif %}
             </div>
             <div class="col-4 text-center" style="margin-right: auto;margin-left: auto;">
@@ -40,7 +40,7 @@
     <hr>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            {% if app.user  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">Profile</a> {% endif %}
+            {% if app.user  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">My Profile</a> {% endif %}
             <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
             <a class="p-2 text-muted" href="#">Contact</a>
         </nav>
@@ -50,7 +50,7 @@
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Find your news on our featured blog</h1>
             <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+            <p class="lead mb-0"><a href="#blog-post" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
     <div class="row">
         <div class="col-md-8 blog-main">
             <h3 class="pb-3 mb-4 font-italic border-bottom">
-                From the Firehose
+                Newest Articles
             </h3>
             <div class="blog-post">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
