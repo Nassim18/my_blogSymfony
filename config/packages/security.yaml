@@ -37,6 +37,10 @@ security:
         # - { path: ^/profile, roles: ROLE_USER }
         # require ROLE_ADMIN for /profile*
         - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/posts/add-post*, roles: ROLE_USER }
+        - { path: ^/posts/update-post*, roles: ROLE_USER }
+        - { path: ^/posts/delete-post*, roles: ROLE_USER }
+        - { path: ^/posts/delete-comment*, roles: ROLE_USER }
     role_hierarchy:
         ROLE_EDITOR: ROLE_USER
         ROLE_ADMIN: ROLE_EDITION

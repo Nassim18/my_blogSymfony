@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku access denied comment deletion">
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="Heroku delete comment access">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PostRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/post" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/security" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -187,11 +187,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nassim\my_project\templates\security" />
       <recent name="C:\Users\Nassim\my_project\templates\post" />
       <recent name="C:\Users\Nassim\my_project\assets\styles" />
       <recent name="C:\Users\Nassim\my_project\src\Repository" />
       <recent name="C:\Users\Nassim\my_project\src\Entity" />
-      <recent name="C:\Users\Nassim\my_project\templates\security" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nassim\my_project\templates\post" />
@@ -216,7 +216,6 @@
       <workItem from="1606390821081" duration="25183000" />
       <workItem from="1608058983856" duration="352000" />
       <workItem from="1608059510997" duration="237694000" />
-      <workItem from="1609193005143" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="Adding of new Symfony Project">
       <created>1604585221561</created>
@@ -456,70 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609091745794</updated>
     </task>
-    <task id="LOCAL-00035" summary="Heroku access denied route">
-      <created>1609092205127</created>
+    <task id="LOCAL-00035" summary="Heroku delete comment access">
+      <created>1609106316390</created>
       <option name="number" value="00035" />
       <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1609092205127</updated>
+      <updated>1609106316390</updated>
     </task>
-    <task id="LOCAL-00036" summary="Heroku access denied comment deletion">
-      <created>1609093374843</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1609093374843</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Heroku access denied comment deletion">
-      <created>1609093747589</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1609093747589</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Heroku access denied comment deletion">
-      <created>1609093876402</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1609093876402</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Heroku access denied comment deletion">
-      <created>1609094245931</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1609094245931</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Heroku access denied comment deletion">
-      <created>1609094391742</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1609094391742</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Heroku access denied comment deletion">
-      <created>1609094808131</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1609094808131</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Heroku access denied comment deletion">
-      <created>1609095023434</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1609095023434</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Heroku access denied comment deletion">
-      <created>1609095984227</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1609095984228</updated>
-    </task>
-    <option name="localTasksCounter" value="44" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,26 +494,8 @@
     <MESSAGE value="Heroku restore form" />
     <MESSAGE value="Heroku delete post redirection" />
     <MESSAGE value="Heroku access denied route" />
-    <MESSAGE value="Heroku access denied comment deletion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroku access denied comment deletion" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1609076089141">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1609076089141" />
-    <state x="414" y="44" key="RollbackChangesDialog" timestamp="1609073153267">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="414" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1609073153267" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609096015775">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609096015775" />
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609094656112">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1609094656112" />
+    <MESSAGE value="Heroku delete comment access" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heroku delete comment access" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

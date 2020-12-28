@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-<title>{% block title %}Registration{% endblock %}</title>
-{% block head %}
-{{ encore_entry_link_tags('app') }}
+<head>
+    <title style="margin-left: 20%;margin-right: 20%">{% block title %}Enovbm Blog{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}
     {% endblock %}
-{% endblock %}
+</head>
+<body>
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -95,12 +98,12 @@
                                         <hr class="hr-or">
                                     </div>
 
-                                    <div class="row ">
-                                        <div class="col-lg-6 col-sm">
+                                    <div class="col-md-15">
+                                        <div class="col-lg-13 col-sm">
                                             <button type="reset" name="reset" id="reset" class="btn btn-block mybtn btn-warning tx-tfm">Reset</button>
+                                            <button type="submit" name="register" id="register" class="btn btn-block mybtn btn-success tx-tfm">Submit</button>
                                         </div>
                                         <div class="col-lg-6 col-sm">
-                                            <button type="submit" name="register" id="register" class="btn btn-block mybtn btn-success tx-tfm">Submit</button>
                                         </div>
                                         <br>
                                         <br>
@@ -117,4 +120,5 @@
     {% endif %}
 </form>
 {% endblock %}
+</body>
 </html>

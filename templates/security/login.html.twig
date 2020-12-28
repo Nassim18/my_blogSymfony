@@ -1,15 +1,16 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
-{% block stylesheets %}
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title style="margin-left: 20%;margin-right: 20%">{% block title %}Enovbm Blog{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ encore_entry_link_tags('app') }}
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
 {% block body %}
+<div class="container">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -123,4 +124,7 @@
         </div>
     {% endif %}
 </form>
+</div>
 {% endblock %}
+</body>
+</html>

@@ -19,13 +19,7 @@ class CommentType extends AbstractType
                     "class" => "form-control"
                 ]
             ])
-            ->add("submit", SubmitType::class, [
-                "attr" => [
-                    "class" => "btn btn-primary"
 
-                ],
-                'label' => 'Leave a comment'
-            ])
         ;
     }
 
