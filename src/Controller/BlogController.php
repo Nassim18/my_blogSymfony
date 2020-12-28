@@ -241,7 +241,8 @@ class BlogController extends AbstractController
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id' => $id]);
         $userConnected = $this->getUser()->getUsername();
         $userr = $this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=> $post->getUser()->getId()]);
-        if(strcmp($userConnected , $userr) !== 0){
+        //dd($userConnected,$userr);
+        if(strcmp($userConnected , $userr->getUsername()) !== 0){
             return $this->render('security/error.html.twig');
         }
         $em = $this->getDoctrine()->getManager();

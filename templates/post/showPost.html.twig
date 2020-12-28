@@ -68,7 +68,7 @@
                     {{ form_start(form) }}
                     <h4 class="font-italic">Comments section</h4>
                     {{ form_row(form.content) }}
-                    <div class="p-3" style="float: right">
+                    <div class="p-2" style="float: right">
                         {% if app.user %}
                             <div class="col-lg-12 col-sm">
                                 <button type="submit" name="create" id="create" class="btn btn-block mybtn btn-success tx-tfm">Leave a comment</button>
@@ -83,6 +83,8 @@
                 </div>
                 <br>
             </div>
+            <br>
+            <br>
             <div class="col-md-7">
                 <h5 class="font-italic">Post comments "<small>{{ post.comments.count }} </small><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
