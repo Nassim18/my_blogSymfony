@@ -113,6 +113,7 @@
                                                                 <div class="row">
                                                                     <div class="col-6 d-flex justify-content-center align-items-center">
                                                                         <div class="icon-big text-warning text-center">
+                                                                            <div class="notif">{{ app.user.posts.count }}</div>
                                                                             <i class="fas fa-copy"></i>
                                                                         </div>
                                                                     </div>
@@ -134,7 +135,7 @@
                                                                 <div class="row">
                                                                     <div class="col-6 d-flex justify-content-center align-items-center">
                                                                         <div class="icon-big text-info text-center" title="1 new comment">
-                                                                            <div class="notif">1</div>
+                                                                            <div class="notif">{{ app.user.comments.count }}</div>
                                                                             <i class="fas fa-comment"></i>
                                                                         </div>
                                                                     </div>
