@@ -62,6 +62,10 @@ class Post
 
 
 
+
+
+
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -168,17 +172,19 @@ class Post
         return $this;
     }
 
-
-    public function getImage()
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-
-    public function setImage($image): void
+    public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
     }
+
+
 
 
 

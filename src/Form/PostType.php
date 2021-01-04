@@ -32,8 +32,10 @@ class PostType extends AbstractType
             ->add('image', TextType::class,[
                 "attr" => [
                     "class" => "form-control",
-                    'placeholder' => "Please past your image link here"
-                ]
+                    'placeholder' => "Please past your image link here",
+                    'pattern'=>"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.jpeg|.gif)"
+                ],
+                "label"=>"Image (.png/jpg/jpeg/gif)"
 
             ])
 

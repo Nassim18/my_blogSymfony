@@ -183,6 +183,10 @@ class BlogController extends AbstractController
         {
             $post->seturl_alias($slugify->slugify($post->getTitre()));
             $em = $this->getDoctrine()->getManager();
+            $image = $form->getData()->getImage();
+            if(!$this->endsWith($image,'.jpeg') && !$this->endsWith($image,'.gif') && !$this->endsWith($image,'.jpg') &&  !$this->endsWith($image,'.png')){
+                dd("Please enter a valid link for the image");
+            }
             //$file = new File($post->getImage().'test.jpg');
             //$filename = 'test.jpg';
             //$file->move($this->getParameter('images_directory'), $filename);
@@ -325,6 +329,13 @@ class BlogController extends AbstractController
             'form' => $form->createView()
         ]);
 
+    }
+    function endsWith( $string, $end ) {
+        $length = strlen( $end );
+        if( !$length ) {
+            return true;
+        }
+        return substr( $string, -$length ) === $end;
     }
 
 
