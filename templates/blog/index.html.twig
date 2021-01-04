@@ -67,7 +67,7 @@
                     {% for post in posts|slice(0,10) %}
                         <div class="col-md-6">
                             <div class="card h-100">
-                                <img src="https://placeimg.com/380/230/tech" class="card-img-top" alt="...">
+                                <img src="{{ post.image }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{post.titre}} <small>({{ post.comments|length }})  </small><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>

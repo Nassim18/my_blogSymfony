@@ -18,7 +18,7 @@
                         <a class="text-muted" href="/{{ path('app_register') }}">Register</a>
                     {% endif %}
                     {% if app.user  %}
-                        <a class="text-muted" href="/" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
+                        <a class="text-muted" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
                     {% endif %}
                 </div>
                 <div class="col-4 text-center">
@@ -46,6 +46,10 @@
                     <a class="nav-link mb-3 p-3 shadow" id="v-pills-post-management-tab" data-toggle="pill" href="#v-pills-post-management" role="tab" aria-controls="v-pills-post-management" aria-selected="false">
                         <i class="fa fa-cog mr-2"></i>
                         <span class="font-weight-bold small text-uppercase">Post Management</span></a>
+
+                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-comment-management-tab" data-toggle="pill" href="#v-pills-comment-management" role="tab" aria-controls="v-pills-comment-management" aria-selected="false">
+                        <i class="fa fa-cog mr-2"></i>
+                        <span class="font-weight-bold small text-uppercase">Comment Management</span></a>
 
                     <a class="nav-link mb-3 p-3 shadow" id="v-pills-reviews-tab" data-toggle="pill" href="#v-pills-reviews" role="tab" aria-controls="v-pills-reviews" aria-selected="false">
                         <i class="fa fa-star mr-2"></i>
@@ -214,8 +218,8 @@
                                     <td>{{ post.content|striptags|slice(0, 20) ~ '...' }}</td>
                                     <td>{{ post.publishedAt |date("d/m/Y") }}</td>
                                     <td>
-                                         <a class="edit" title="Edit" data-toggle="tooltip" href="{{ path('update_post', {'id':post.id}) }}"><i class="material-icons"></i></a>
-                                        <a class="delete" title="Delete" data-toggle="tooltip" href="{{ path('delete_post', {'id': post.id}) }}"><i class="material-icons"></i></a>
+                                         <a class="edit" title="Edit" data-toggle="tooltip" href="{{ path('update_post', {'id':post.id}) }}"><i class="material-icons"></i>Edit</a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip" href="{{ path('delete_post', {'id': post.id}) }}"><i class="material-icons"></i>Delete</a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -224,12 +228,56 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-reviews" role="tabpanel" aria-labelledby="v-pills-reviews-tab">
+                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-comment-management" role="tabpanel" aria-labelledby="v-pills-post-comment-tab">
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-8"><h2>Comments <b>Details</b></h2></div>
 
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr style="background-color: #dddddd">
+                                    <th>Post</th>
+                                    <th>Content</th>
+                                    <th>Published At</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                {% for comment in user.comments %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ comment.post }}</td>
+                                    <td>{{ comment.content|striptags|slice(0, 20) ~ '...' }}</td>
+                                    <td>{{ comment.createdAt |date("d/m/Y") }}</td>
+                                    <td>
+                                        <a class="delete" title="Delete" data-toggle="tooltip" href="{{ path('delete_comment', {'id': comment.id}) }}"><i class="material-icons"></i>Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-reviews" role="tabpanel" aria-labelledby="v-pills-reviews-tab">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-8"><h2>Under <b>Construction</b></h2></div>
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-likes" role="tabpanel" aria-labelledby="v-pills-likes-tab">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-sm-8"><h2>Under <b>Construction</b></h2></div>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
