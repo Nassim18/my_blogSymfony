@@ -6,7 +6,7 @@ A blog created by **BOUALI Mohammed-Amin** and **SHOUT Oussama Nassim** as a par
 	 [https://my-blogsymfony.herokuapp.com/](https://my-blogsymfony.herokuapp.com/)
 - To connect as Administrator you can use the credentials bellow : 
 `username : Admin` 
- `password : azerty`
+`password : azerty`
 ## Functionalities and security 
 - A visitor of the blog has the ability to read posts, register/login to our website, and contact the development team. (credentials of our mail account bellow) 
 - In order to register to our blog, user must provide a username, e-mail address (which we verify if the two of them already exists on server side), and a password (must contain at least 6 characters) 
