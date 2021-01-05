@@ -35,4 +35,3 @@ A blog created by **BOUALI Mohammed-Amin** and **SHOUT Oussama Nassim** as a par
 ```SensioFrameworkExtraBundle``` : add annotations for controllers.  
 ```Mailer``` : to get the contact us works with mail sending.  
 ```security-bundle``` : manage access and user login processes.  
-```classDeclaration.getMethods() ``` : returns a *MethodDeclaration[]* containing the class method declarations regardless of whether it's an instance of static method.
