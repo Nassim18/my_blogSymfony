@@ -4,7 +4,7 @@ A blog created by **BOUALI Mohammed-Amin** and **SHOUT Oussama Nassim** as a par
 ## Heroku and login credentials : 
 - In order to access our blog on **Heroku** platform, please follow this link :
 	 [https://my-blogsymfony.herokuapp.com/](https://my-blogsymfony.herokuapp.com/)
-- To connect as Administrator you can use the credentials bellow : 
+- To connect as Administrator you can use the credentials bellow :  
 `username : Admin`  
 `password : azerty`  
 ## Functionalities and security 
