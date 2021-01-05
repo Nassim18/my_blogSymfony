@@ -49,7 +49,7 @@ class ContactManager
             $event = new ContactEvent($contact);
             $this->eventDisptacher->dispatch($event);
 
-            $this->messageService->addSuccess('Votre message à bien été  valider .');
+            $this->messageService->addSuccess('Your message has been sent successfully.');
         }
     }
 }
