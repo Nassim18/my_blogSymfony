@@ -424,7 +424,7 @@ class BlogController extends AbstractController
             ]);
             $mailerService->send('Your message has been successefully received ',$email,$email,"contact/contactform.html.twig",[
                 "name" => "My-blogSymfony",
-                "description" => "Thank you for contacting us ! :D your request will be treated by our team, have a good day."
+                "description" => "Thank you for contacting us ! :D your request will be treated as soon as possible by our team, have a good day."
             ]);
             $this->get('session')->getFlashBag()->add(
                 'message',
