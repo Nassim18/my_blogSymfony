@@ -4,12 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Image;
+use App\Entity\Contact;
 use App\Entity\Post;
 use App\Entity\User;
+use App\Form\ContactType;
 use App\Form\PostType;
 use App\Form\CommentType;
 use App\Form\UpdateType;
 use App\Repository\PostRepository;
+use App\Security\MailerService;
+use App\Security\MessageService;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -392,6 +396,46 @@ class BlogController extends AbstractController
             return true;
         }
         return substr( $string, -$length ) === $end;
+    }
+
+
+    /**
+     * @Route("/contact", name="contact")
+     * @param Request $request
+     * @param MailerService $mailerService
+     * @return Response
+     */
+    public function contact(Request $request,MailerService $mailerService): Response
+    {
+        $contact = new Contact();
+        $formContact = $this->createForm(ContactType::class, $contact);
+        $formContact->handleRequest($request);
+
+        if ($formContact->isSubmitted() && $formContact->isValid()) {
+            $data = $formContact->getData();
+            //dd($data->getDescription());
+            $name = $data->getName();
+            $email = $data->getEmail();
+            //$description = $data->getDescription();
+            //$contactManager->sendContact($contact);
+            $mailerService->send('New message from '.$name,$email,"blogsymfony.dev@gmail.com","contact/contactform.html.twig",[
+                "name" => $data->getName(),
+                "description" => $data->getDescription()
+            ]);
+            $mailerService->send('Your message has been successefully received ',$email,$email,"contact/contactform.html.twig",[
+                "name" => "My-blogSymfony",
+                "description" => "Thank you for contacting us ! :D your request will be treated by our team, have a good day."
+            ]);
+            $this->get('session')->getFlashBag()->add(
+                'message',
+                'Thank you for contacting us !'
+            );
+            return $this->redirectToRoute('contact');
+        }
+
+        return $this->render('contact/contact.html.twig', [
+            'formContact' => $formContact->createView()
+        ]);
     }
 
 

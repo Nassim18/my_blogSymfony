@@ -45,7 +45,7 @@
             {% if app.user.roles[0] == 'ROLE_ADMIN'  %}    <a class="p-2 text-muted" href="{{ path('admin_profile', {'username': app.user.username}) }}">My Dashboard</a> {% endif %}
             {% endif %}
             <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
-            <a class="p-2 text-muted" href="#">Contact</a>
+            <a class="p-2 text-muted" href="{{ path('contact') }}">Contact</a>
         </nav>
     </div>
 
