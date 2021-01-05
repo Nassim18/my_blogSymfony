@@ -22,7 +22,8 @@ A blog created by **BOUALI Mohammed-Amin** and **SHOUT Oussama Nassim** as a par
   - Delete users.
   - And he has also the ability to do what a simple user can do.   
 - In order to edit or add a post when you are connected, please go to My Profile page, then go to the Post Managment section.
-- We've added some restrictions on our blog routes, in order to limit the access to each root by user role (visitor, simple user, admin)
+- We've added some restrictions on our blog routes, in order to limit the access to each root by user role (visitor, simple user, admin)  
+- When a user contact the development team, a confirmation mail will be sent to him if the operation has been succeeded.
 > Dev team mail credentials :  
 >  mail address : blogsymfony.dev@gmail.com  
 >  password : symf1234
