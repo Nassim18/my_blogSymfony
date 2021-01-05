@@ -50,7 +50,12 @@
             <header class="blog-header py-3">
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-4 pt-1">
-                        <a class="text-muted" href="{{ path('profile', {'username': app.user.username}) }}">Back to profile</a>
+                        {% if app.user %}
+                            {% if app.user.roles[0] == 'ROLE_USER'  %}
+                                <a class="text-muted" href="{{ path('profile', {'username': app.user.username}) }}">Back to profile</a>
+                            {% endif %}
+                            {% if app.user.roles[0] == 'ROLE_ADMIN'  %}    <a class="p-2 text-muted" href="{{ path('admin_profile', {'username': app.user.username}) }}">Back to my dashboard</a> {% endif %}
+                        {% endif %}
                     </div>
                     <div class="col-4 text-center">
                         <a class="blog-header-logo text-dark" href="{{ path('index') }}" style="font-family: 'Kaushan Script', cursive;font-size: 2.75rem;">The Enovbm Blog</a>

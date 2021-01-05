@@ -19,15 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="back to top">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210104214449.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="latest articles on home page">
+      <change afterPath="$PROJECT_DIR$/templates/profile/admin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PostType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PostType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/addPost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/addPost.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/showAllPosts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/showAllPosts.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/showPost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/showPost.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/userPosts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/userPosts.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +165,9 @@
       <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jsFD2T8CWBtyqQ4wZG7vTscfRT" />
@@ -179,7 +184,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -192,11 +197,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nassim\my_project\templates\profile" />
       <recent name="C:\Users\Nassim\my_project\src\Entity" />
       <recent name="C:\Users\Nassim\my_project\templates\security" />
       <recent name="C:\Users\Nassim\my_project\templates\post" />
       <recent name="C:\Users\Nassim\my_project\assets\styles" />
-      <recent name="C:\Users\Nassim\my_project\src\Repository" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nassim\my_project\templates\post" />
@@ -221,7 +226,6 @@
       <workItem from="1606390821081" duration="25183000" />
       <workItem from="1608058983856" duration="352000" />
       <workItem from="1608059510997" duration="237694000" />
-      <workItem from="1609792077450" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="Adding of new Symfony Project">
       <created>1604585221561</created>

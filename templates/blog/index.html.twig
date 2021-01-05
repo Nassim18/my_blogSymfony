@@ -40,7 +40,10 @@
     <hr>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            {% if app.user  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">My Profile</a> {% endif %}
+            {% if app.user %}
+            {% if app.user.roles[0] == 'ROLE_USER'  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">My Profile</a> {% endif %}
+            {% if app.user.roles[0] == 'ROLE_ADMIN'  %}    <a class="p-2 text-muted" href="{{ path('admin_profile', {'username': app.user.username}) }}">My Dashboard</a> {% endif %}
+            {% endif %}
             <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
             <a class="p-2 text-muted" href="#">Contact</a>
         </nav>
@@ -74,7 +77,7 @@
                                             <path fill-rule="evenodd" d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
                                         </svg></h5>
                                     <p> Published by <a href="{{ path('user_posts',{'username':post.user.username}) }}">{{ post.user.fullname }}</a> </p>
-                                    <p class="card-text">{{post.content}}</p>
+                                    <p class="card-text">{{post.content|striptags|slice(0, 300) ~ '...'}}</p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Last updated {{post.publishedAt |date("d/m/Y")}}</small>

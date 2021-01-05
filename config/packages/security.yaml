@@ -33,14 +33,14 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+         #- { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         # require ROLE_ADMIN for /profile*
-        - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/posts/add-post*, roles: ROLE_USER }
-        - { path: ^/posts/update-post*, roles: ROLE_USER }
-        - { path: ^/posts/delete-post*, roles: ROLE_USER }
-        - { path: ^/posts/delete-comment*, roles: ROLE_USER }
+        - { path: ^/profile, roles: [ROLE_USER,ROLE_ADMIN] }
+        - { path: ^/posts/add-post*, roles: [ROLE_USER,ROLE_ADMIN] }
+        - { path: ^/posts/update-post*, roles: [ROLE_USER,ROLE_ADMIN] }
+        - { path: ^/posts/delete-post*, roles: [ROLE_USER,ROLE_ADMIN] }
+        - { path: ^/posts/delete-comment*, roles: [ROLE_USER,ROLE_ADMIN] }
     role_hierarchy:
         ROLE_EDITOR: ROLE_USER
-        ROLE_ADMIN: ROLE_EDITION
+        ROLE_ADMIN: ROLE_EDITOR

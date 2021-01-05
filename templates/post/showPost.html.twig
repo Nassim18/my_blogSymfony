@@ -16,7 +16,7 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
                 {% if app.user == false %}
-                    <a class="text-muted" href="/{{ path('app_register') }}">Register</a>
+                    <a class="text-muted" href="{{ path('app_register') }}">Register</a>
                 {% endif %}
                 {% if app.user  %}
                     <a class="text-muted" href="" style="font-family: 'Kaushan Script', cursive;font-size: 1.45rem;">Welcome back "{{ app.user.fullname }}"</a>
@@ -41,8 +41,10 @@
     <hr>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            {% if app.user  %}   <a class="p-2 text-muted" href="{{ path('profile', {'username': app.user.username}) }}">Profile</a> {% endif  %}
-            <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
+            {% if app.user %}
+                {% if app.user.roles[0] == 'ROLE_USER'  %}    <a class="p-2 text-muted" href="{{ path('user_profile', {'username': app.user.username}) }}">My Profile</a> {% endif %}
+                {% if app.user.roles[0] == 'ROLE_ADMIN'  %}    <a class="p-2 text-muted" href="{{ path('admin_profile', {'username': app.user.username}) }}">My Dashboard</a> {% endif %}
+            {% endif %}            <a class="p-2 text-muted" href="{{ path('posts_show') }}">All Posts</a>
             <a class="p-2 text-muted" href="#">Contact</a>
         </nav>
     </div>
@@ -55,7 +57,7 @@
 
 
             <div class="blog-post">
-                <img src="https://placeimg.com/380/230/tech" class="card-img-top" alt="...">
+                <img src="{{ post.image }}" class="card-img-top" alt="...">
                 <h2 class="blog-post-title">{{post.titre}}</h2>
                 <p class="blog-post-meta">Last updated {{post.publishedAt |date("d/m/Y")}} by <a href="{{ path('user_posts',{'username':post.user.username}) }}">{{ post.user.fullname }}</a></p>
 
