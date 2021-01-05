@@ -20,26 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8574d9c-9f37-46e2-8735-6ae780982115" name="Default Changelist" comment="latest articles on home page">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210105105223.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ContactManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Event/ContactEvent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ContactRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/MailerService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/MessageService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contact/contact.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contact/contactform.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/my_blogSymfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_blogSymfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
